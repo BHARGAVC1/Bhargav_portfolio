@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Bhargav C | Aspiring Software Developer & AI Engineer</title>
+<meta name="description" content="Bhargav C — Aspiring Software Developer, AI Engineer, Full Stack Developer specialising in GenAI Security, Computer Vision, NLP. Google Gold League · Salesforce Trailblazer."/>
+<meta name="keywords" content="Bhargav C, AI Engineer, Software Developer, Full Stack, GenAI Security, Computer Vision, NLP, Google Gold League, Salesforce Trailblazer"/>
+<meta property="og:title" content="Bhargav C | AI Engineer & Software Developer Portfolio"/>
+<meta property="og:description" content="Aspiring Software Developer & AI Engineer — GenAI Security, Computer Vision, NLP, Full Stack."/>
+<meta property="og:type" content="website"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Times+New+Roman:ital,wght@0,400;0,700;1,400;1,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+/* ══════════════════════════════════════════
+   TOKENS
+══════════════════════════════════════════ */
+:root { --tt: background 0.3s ease, color 0.3s ease, border-color 0.3s ease; }
+
+[data-theme="dark"] {
+  --bg:  #090D14; --bg2: #0F1420; --bg3: #161C2E; --bg4: #1C2438;
+  --bdr: rgba(255,255,255,0.06); --bdr2: rgba(255,255,255,0.11); --bdr3: rgba(255,255,255,0.18);
+  --tx:  #EEF0F8; --tx2: #C5CAE0; --mu: #7A80A0;
+  --ac:  #4F7CFF; --ac2: #9B72FF; --acR: 79,124,255;
+  --gr:  #22C55E; --grBg: rgba(34,197,94,0.08); --grBdr: rgba(34,197,94,0.22);
+  --sh:  0 8px 32px rgba(0,0,0,0.5); --sh2: 0 2px 8px rgba(0,0,0,0.3);
+  --hover: #1C2438;
+}
+[data-theme="light"] {
+  --bg:  #F5F7FF; --bg2: #FFFFFF; --bg3: #EEF1FB; --bg4: #E5E9F8;
+  --bdr: rgba(0,0,0,0.07); --bdr2: rgba(0,0,0,0.13); --bdr3: rgba(0,0,0,0.22);
+  --tx:  #0F1420; --tx2: #2D3455; --mu: #6B728E;
+  --ac:  #3B63E8; --ac2: #7C52D9; --acR: 59,99,232;
+  --gr:  #16A34A; --grBg: rgba(22,163,74,0.07); --grBdr: rgba(22,163,74,0.22);
+  --sh:  0 8px 32px rgba(0,0,0,0.1); --sh2: 0 2px 8px rgba(0,0,0,0.06);
+  --hover: #E8ECF8;
+}
+
+/* ══════════════════════════════════════════
+   RESET
+══════════════════════════════════════════ */
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body {
+  font-family: 'Times New Roman', Times, serif;
+  background: var(--bg); color: var(--tx);
+  line-height: 1.65; -webkit-font-smoothing: antialiased;
+  transition: var(--tt);
+}
+a { color:inherit; text-decoration:none; }
+img { max-width:100%; display:block; }
+::-webkit-scrollbar { width:4px; }
+::-webkit-scrollbar-track { background:var(--bg); }
+::-webkit-scrollbar-thumb { background:var(--bdr3); border-radius:2px; }
+
+/* ══════════════════════════════════════════
+   PROGRESS BAR
+══════════════════════════════════════════ */
+#progress {
+  position:fixed; top:0; left:0; height:2px; width:0%; z-index:9999;
+  background:linear-gradient(90deg,var(--ac),var(--ac2));
+  transition:width 0.08s linear;
+}
+
+/* ══════════════════════════════════════════
+   NAV
+══════════════════════════════════════════ */
+nav {
+  position:sticky; top:0; z-index:500;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 36px; height:58px; gap:16px;
+  border-bottom:1px solid var(--bdr);
+  transition:var(--tt);
+}
+[data-theme="dark"] nav { background:rgba(9,13,20,0.9); backdrop-filter:blur(20px); }
+[data-theme="light"] nav { background:rgba(245,247,255,0.92); backdrop-filter:blur(20px); }
+
+.nav-logo {
+  font-size:16px; font-weight:700; letter-spacing:-0.3px;
+  white-space:nowrap; flex-shrink:0; font-style:italic;
+  background:linear-gradient(135deg,var(--ac),var(--ac2));
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+}
+.nav-links { display:flex; gap:2px; flex:1; justify-content:center; }
+.nav-links a {
+  font-size:13px; color:var(--mu); padding:6px 11px;
+  border-radius:7px; transition:all 0.15s; cursor:pointer; font-weight:400;
+}
+.nav-links a:hover { color:var(--tx); background:var(--bg3); }
+.nav-right { display:flex; align-items:center; gap:8px; flex-shrink:0; }
+
+/* Theme toggle */
+.theme-btn {
+  width:36px; height:36px; border-radius:9px;
+  border:1px solid var(--bdr2); background:transparent;
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer; color:var(--mu); transition:all 0.15s;
+  font-size:18px; line-height:1;
+}
+.theme-btn:hover { background:var(--bg3); color:var(--tx); }
+
+/* Profiles dropdown */
+.menu-wrap { position:relative; }
+.btn-profiles {
+  display:inline-flex; align-items:center; gap:6px;
+  font-size:13px; font-weight:400; padding:7px 14px; border-radius:8px;
+  border:1px solid var(--bdr2); background:transparent;
+  color:var(--tx); cursor:pointer; font-family:'Times New Roman',Times,serif;
+  transition:all 0.15s;
+}
+.btn-profiles:hover { background:var(--bg3); }
+.dropdown {
+  display:none; position:absolute; right:0; top:calc(100% + 8px);
+  background:var(--bg2); border:1px solid var(--bdr2);
+  border-radius:14px; overflow:hidden; min-width:240px; z-index:600;
+  box-shadow:var(--sh);
+}
+.dropdown.open { display:block; animation:dropIn 0.18s ease; }
+@keyframes dropIn { from{opacity:0;transform:translateY(-6px)} to{opacity:1;transform:translateY(0)} }
+.drop-item {
+  display:flex; align-items:center; gap:12px;
+  padding:12px 16px; color:var(--tx2); font-size:13px;
+  border-bottom:1px solid var(--bdr); transition:background 0.12s;
+}
+.drop-item:last-child { border-bottom:none; }
+.drop-item:hover { background:var(--bg3); }
+.drop-icon { font-size:18px; flex-shrink:0; width:22px; text-align:center; }
+.drop-name { font-weight:700; font-size:13px; color:var(--tx); }
+.drop-sub  { font-size:11px; color:var(--mu); margin-top:1px; }
+.drop-ext  { margin-left:auto; font-size:12px; color:var(--mu); }
+
+/* ══════════════════════════════════════════
+   HERO
+══════════════════════════════════════════ */
+.hero {
+  padding:76px 36px 68px;
+  border-bottom:1px solid var(--bdr);
+  position:relative; overflow:hidden;
+}
+.hero-glow {
+  position:absolute; top:-20%; right:-5%;
+  width:600px; height:600px; border-radius:50%;
+  background:radial-gradient(circle,rgba(var(--acR),0.07) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-inner {
+  display:grid; grid-template-columns:1fr auto;
+  gap:48px; align-items:flex-start; max-width:780px; position:relative;
+}
+.hero-tag {
+  display:inline-flex; align-items:center; gap:8px;
+  font-size:11px; font-weight:400; letter-spacing:0.8px;
+  text-transform:uppercase; color:var(--mu);
+  border:1px solid var(--bdr2); padding:5px 14px;
+  border-radius:20px; margin-bottom:18px; background:var(--bg2);
+  font-style:italic;
+}
+.pulse {
+  width:7px; height:7px; border-radius:50%;
+  background:var(--gr); flex-shrink:0;
+  animation:pulseAnim 2.4s infinite; box-shadow:0 0 6px var(--gr);
+}
+@keyframes pulseAnim { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(0.8)} }
+
+.hero-role {
+  font-size:13px; color:var(--ac); font-weight:700;
+  letter-spacing:0.5px; margin-bottom:8px; text-transform:uppercase;
+  font-style:normal;
+}
+.hero-name {
+  font-size:54px; font-weight:700; letter-spacing:-2px;
+  line-height:1.0; margin-bottom:10px; font-style:italic;
+}
+.hero-seeking {
+  font-size:13px; color:var(--mu); margin-bottom:14px;
+  line-height:1.7; font-style:italic;
+}
+.hero-seeking strong { color:var(--tx2); font-style:normal; }
+.role-tags { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:18px; }
+.rtag {
+  font-size:11px; padding:3px 10px; border-radius:5px;
+  background:rgba(var(--acR),0.08); color:var(--ac);
+  border:1px solid rgba(var(--acR),0.18); font-weight:700; font-style:normal;
+}
+.hero-title {
+  display:flex; flex-wrap:wrap; gap:6px; margin-bottom:18px;
+}
+.htag {
+  font-size:11px; padding:3px 9px; border-radius:5px;
+  background:var(--bg3); color:var(--mu);
+  border:1px solid var(--bdr); font-style:normal; font-weight:400;
+}
+.hero-desc {
+  font-size:14px; line-height:1.85; color:var(--mu);
+  max-width:470px; margin-bottom:32px; font-style:italic;
+}
+.hero-btns { display:flex; gap:10px; flex-wrap:wrap; }
+.hbtn {
+  display:inline-flex; align-items:center; gap:7px;
+  font-size:13px; font-weight:700; padding:10px 20px;
+  border-radius:10px; cursor:pointer; transition:all 0.2s;
+  font-family:'Times New Roman',Times,serif; letter-spacing:0.1px;
+  text-decoration:none;
+}
+.hbtn-primary {
+  background:linear-gradient(135deg,var(--ac),var(--ac2));
+  color:#fff; border:none; box-shadow:0 4px 16px rgba(var(--acR),0.3);
+}
+.hbtn-primary:hover { opacity:0.88; transform:translateY(-1px); box-shadow:0 6px 20px rgba(var(--acR),0.4); }
+.hbtn-outline {
+  background:transparent; color:var(--tx2); border:1px solid var(--bdr2);
+}
+.hbtn-outline:hover { background:var(--bg3); border-color:var(--bdr3); color:var(--tx); }
+
+/* Photo */
+.photo-frame {
+  width:140px; height:140px; border-radius:20px;
+  border:1px solid var(--bdr2); overflow:hidden;
+  flex-shrink:0; background:var(--bg3);
+  display:flex; flex-direction:column; align-items:center;
+  justify-content:center; gap:6px; cursor:pointer;
+  transition:border-color 0.2s, box-shadow 0.2s; position:relative;
+}
+.photo-frame:hover { border-color:var(--ac); box-shadow:0 0 0 3px rgba(var(--acR),0.1); }
+.photo-frame img { width:100%; height:100%; object-fit:cover; display:none; }
+.photo-frame img.loaded { display:block; }
+.photo-placeholder { display:flex; flex-direction:column; align-items:center; gap:6px; padding:12px; }
+.photo-ico { font-size:40px; }
+.photo-hint { font-size:10px; color:var(--mu); text-align:center; line-height:1.4; font-style:italic; }
+.photo-input { position:absolute; inset:0; opacity:0; cursor:pointer; }
+
+/* ══════════════════════════════════════════
+   STATS
+══════════════════════════════════════════ */
+.stats-row {
+  display:grid; grid-template-columns:repeat(5,1fr);
+  border-bottom:1px solid var(--bdr);
+}
+.stat {
+  padding:22px 24px; border-right:1px solid var(--bdr);
+  transition:background 0.15s;
+}
+.stat:last-child { border-right:none; }
+.stat:hover { background:var(--bg2); }
+.stat-num {
+  font-family:'JetBrains Mono',monospace;
+  font-size:28px; font-weight:500; letter-spacing:-1px; color:var(--tx);
+}
+.stat-num em { font-size:15px; font-style:normal; color:var(--ac); }
+.stat-label { font-size:10px; color:var(--mu); margin-top:5px; text-transform:uppercase; letter-spacing:0.8px; }
+
+/* ══════════════════════════════════════════
+   SECTION
+══════════════════════════════════════════ */
+.section { padding:56px 36px; border-bottom:1px solid var(--bdr); }
+.sec-hdr { display:flex; align-items:baseline; justify-content:space-between; margin-bottom:32px; }
+.sec-title {
+  font-size:11px; font-weight:700; text-transform:uppercase;
+  letter-spacing:1.8px; color:var(--mu); font-style:normal;
+}
+.sec-idx { font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--mu); opacity:0.3; }
+
+/* ══════════════════════════════════════════
+   ABOUT
+══════════════════════════════════════════ */
+.about-grid { display:grid; grid-template-columns:1fr 230px; gap:36px; align-items:start; }
+.about-text { font-size:15px; line-height:1.9; color:var(--mu); }
+.about-text strong { color:var(--tx); font-weight:700; }
+.focus-list { display:flex; flex-direction:column; gap:8px; }
+.focus-item {
+  display:flex; align-items:center; gap:10px;
+  padding:11px 15px; border:1px solid var(--bdr);
+  border-radius:10px; font-size:13px; font-weight:700;
+  background:var(--bg2); transition:all 0.15s; color:var(--tx2);
+}
+.focus-item:hover { border-color:var(--ac); background:var(--bg3); color:var(--tx); transform:translateX(2px); }
+.focus-ico { font-size:16px; }
+
+/* ══════════════════════════════════════════
+   SKILLS
+══════════════════════════════════════════ */
+.skills-wrap {
+  display:grid; grid-template-columns:repeat(4,1fr);
+  gap:1px; background:var(--bdr);
+  border:1px solid var(--bdr); border-radius:14px; overflow:hidden;
+}
+.sk-cat { background:var(--bg2); padding:20px; transition:background 0.15s; }
+.sk-cat:hover { background:var(--bg3); }
+.sk-name { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--mu); margin-bottom:13px; font-style:normal; }
+.sk-tags { display:flex; flex-wrap:wrap; gap:5px; }
+.tag {
+  font-size:11px; padding:4px 9px; border-radius:5px;
+  background:var(--bg3); color:var(--tx2);
+  border:1px solid var(--bdr); font-weight:400; transition:all 0.15s; cursor:default;
+}
+.tag:hover { border-color:var(--ac); color:var(--ac); }
+
+/* ══════════════════════════════════════════
+   PROJECTS
+══════════════════════════════════════════ */
+.proj-list { border:1px solid var(--bdr); border-radius:14px; overflow:hidden; }
+.proj { padding:26px 28px; border-bottom:1px solid var(--bdr); transition:background 0.15s; }
+.proj:last-child { border-bottom:none; }
+.proj:hover { background:var(--hover); }
+.proj-hdr { display:flex; align-items:flex-start; justify-content:space-between; gap:14px; margin-bottom:10px; }
+.proj-name { font-size:17px; font-weight:700; color:var(--tx); font-style:italic; }
+.proj-badge {
+  font-family:'JetBrains Mono',monospace; font-size:9px; font-weight:500;
+  color:var(--mu); background:var(--bg3); padding:3px 9px; border-radius:5px;
+  border:1px solid var(--bdr); flex-shrink:0; margin-top:4px;
+}
+.proj-badge.flagship { color:var(--ac); border-color:rgba(var(--acR),0.25); background:rgba(var(--acR),0.07); }
+.proj-desc { font-size:14px; color:var(--mu); line-height:1.8; margin-bottom:16px; }
+.proj-metrics { display:flex; gap:20px; flex-wrap:wrap; margin-bottom:14px; }
+.m-val { font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:500; color:var(--tx); }
+.m-lbl { font-size:12px; color:var(--mu); }
+.stack { display:flex; gap:5px; flex-wrap:wrap; margin-bottom:14px; }
+.chip {
+  font-size:9px; padding:3px 8px; border-radius:4px;
+  background:var(--bg3); color:var(--mu);
+  border:1px solid var(--bdr); font-family:'JetBrains Mono',monospace; font-weight:500;
+}
+.proj-links { display:flex; gap:8px; }
+.plink {
+  font-size:12px; font-weight:700; padding:6px 14px;
+  border-radius:8px; border:1px solid var(--bdr2);
+  color:var(--mu); background:transparent;
+  transition:all 0.15s; display:inline-flex; align-items:center; gap:6px;
+  font-family:'Times New Roman',Times,serif;
+}
+.plink:hover { background:var(--bg3); color:var(--tx); border-color:var(--bdr3); }
+
+/* ══════════════════════════════════════════
+   EXPERIENCE
+══════════════════════════════════════════ */
+.exp-card {
+  border:1px solid var(--bdr); border-radius:14px;
+  padding:26px 28px; background:var(--bg2);
+  position:relative; overflow:hidden;
+}
+.exp-card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:3px;
+  background:linear-gradient(90deg,var(--ac),var(--ac2));
+}
+.exp-hdr { margin-bottom:8px; }
+.exp-role { font-size:17px; font-weight:700; color:var(--tx); font-style:italic; }
+.exp-co { font-size:14px; color:var(--ac); margin-top:4px; font-weight:700; }
+.exp-meta { display:flex; flex-wrap:wrap; gap:7px; margin:14px 0 18px; }
+.exp-pill {
+  font-size:11px; padding:4px 11px; border-radius:6px;
+  font-weight:700; display:inline-flex; align-items:center; gap:5px;
+  font-style:normal;
+}
+.ep-date  { background:rgba(var(--acR),0.08); color:var(--ac); border:1px solid rgba(var(--acR),0.2); }
+.ep-grade { background:var(--grBg); color:var(--gr); border:1px solid var(--grBdr); }
+.ep-mode  { background:var(--bg3); color:var(--mu); border:1px solid var(--bdr); }
+.ep-uni   { background:var(--bg3); color:var(--mu); border:1px solid var(--bdr); }
+.ep-role  { background:rgba(155,114,255,0.1); color:#B197FC; border:1px solid rgba(155,114,255,0.25); }
+.exp-list { list-style:none; display:flex; flex-direction:column; gap:9px; }
+.exp-list li {
+  font-size:14px; color:var(--mu); line-height:1.75;
+  padding-left:22px; position:relative;
+}
+.exp-list li::before { content:'→'; position:absolute; left:0; color:var(--ac); font-size:12px; top:3px; }
+.exp-cert-link {
+  display:inline-flex; align-items:center; gap:6px; margin-top:16px;
+  font-size:12px; font-weight:700; padding:6px 14px;
+  border-radius:8px; border:1px solid var(--grBdr);
+  color:var(--gr); background:var(--grBg); transition:all 0.15s;
+  font-style:italic;
+}
+.exp-cert-link:hover { background:rgba(34,197,94,0.14); }
+
+/* ══════════════════════════════════════════
+   CERTIFICATIONS
+══════════════════════════════════════════ */
+.google-highlight {
+  border:1px solid var(--grBdr); border-radius:14px;
+  padding:22px 24px; margin-bottom:16px; background:var(--grBg);
+}
+.gh-top { display:flex; align-items:center; gap:16px; margin-bottom:16px; }
+.gh-icon {
+  width:46px; height:46px; border-radius:12px;
+  background:var(--grBg); display:flex; align-items:center;
+  justify-content:center; font-size:24px;
+  border:1px solid var(--grBdr); flex-shrink:0;
+}
+.gh-name { font-size:15px; font-weight:700; color:var(--tx); }
+.gh-sub  { font-size:12px; color:var(--mu); margin-top:3px; font-style:italic; }
+.gh-pts  { font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--gr); margin-top:4px; font-weight:500; }
+.gh-pts a { color:inherit; text-decoration:underline; }
+.badge-pills { display:flex; flex-wrap:wrap; gap:6px; }
+.bpill {
+  font-size:10px; padding:3px 9px; border-radius:5px;
+  background:var(--grBg); color:var(--gr);
+  border:1px solid var(--grBdr); font-weight:700;
+}
+.sf-row {
+  display:flex; align-items:center; gap:14px;
+  border:1px solid rgba(var(--acR),0.2); border-radius:14px;
+  padding:18px 22px; margin-bottom:16px;
+  background:rgba(var(--acR),0.04);
+}
+.sf-ico {
+  width:42px; height:42px; border-radius:10px;
+  background:rgba(var(--acR),0.1); display:flex; align-items:center;
+  justify-content:center; font-size:22px;
+  border:1px solid rgba(var(--acR),0.2); flex-shrink:0;
+}
+.sf-n { font-size:14px; font-weight:700; color:var(--tx); }
+.sf-s { font-size:12px; color:var(--mu); margin-top:2px; font-style:italic; }
+.sf-lnk {
+  margin-left:auto; font-size:12px; font-weight:700; padding:7px 15px;
+  border-radius:8px; border:1px solid var(--bdr2); color:var(--mu);
+  background:transparent; transition:all 0.15s;
+  display:inline-flex; align-items:center; gap:5px; flex-shrink:0;
+  font-family:'Times New Roman',Times,serif;
+}
+.sf-lnk:hover { background:var(--bg3); color:var(--tx); }
+.cert-cat-title {
+  font-size:11px; font-weight:700; text-transform:uppercase;
+  letter-spacing:1px; color:var(--mu); margin:22px 0 11px; font-style:normal;
+}
+.cert-grid {
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(190px,1fr));
+  gap:1px; background:var(--bdr);
+  border:1px solid var(--bdr); border-radius:14px; overflow:hidden;
+}
+.cert-card { background:var(--bg2); padding:18px; transition:background 0.15s; }
+.cert-card:hover { background:var(--hover); }
+.cert-card a { display:block; text-decoration:none; color:inherit; }
+.cert-icon-sm { font-size:24px; margin-bottom:11px; display:block; }
+.cert-iss { font-size:9px; text-transform:uppercase; letter-spacing:0.8px; color:var(--mu); margin-bottom:4px; font-weight:700; font-style:normal; }
+.cert-nm  { font-size:12px; font-weight:700; line-height:1.45; margin-bottom:9px; color:var(--tx); font-style:italic; }
+.cert-tag { font-size:9px; padding:2px 7px; border-radius:4px; display:inline-block; font-weight:700; font-style:normal; }
+.ct-ai { background:rgba(79,124,255,0.1); color:#7B9FFF; border:1px solid rgba(79,124,255,0.22); }
+.ct-cy { background:rgba(239,68,68,0.08); color:#F87171; border:1px solid rgba(239,68,68,0.22); }
+.ct-re { background:rgba(34,197,94,0.08); color:#4ADE80; border:1px solid rgba(34,197,94,0.22); }
+.ct-pr { background:rgba(167,139,250,0.08); color:#C4B5FD; border:1px solid rgba(167,139,250,0.22); }
+.ct-ex { background:rgba(251,146,60,0.08); color:#FDBA74; border:1px solid rgba(251,146,60,0.22); }
+[data-theme="light"] .ct-ai { background:rgba(59,99,232,0.08); color:#2B4BB3; border:1px solid rgba(59,99,232,0.2); }
+[data-theme="light"] .ct-cy { background:rgba(220,38,38,0.07); color:#B91C1C; border:1px solid rgba(220,38,38,0.15); }
+[data-theme="light"] .ct-re { background:rgba(22,163,74,0.08); color:#15803D; border:1px solid rgba(22,163,74,0.2); }
+[data-theme="light"] .ct-pr { background:rgba(124,82,217,0.08); color:#6D28D9; border:1px solid rgba(124,82,217,0.2); }
+[data-theme="light"] .ct-ex { background:rgba(234,88,12,0.08); color:#C2410C; border:1px solid rgba(234,88,12,0.2); }
+.cert-dot-row { display:flex; align-items:center; gap:5px; margin-top:8px; font-size:10px; color:var(--mu); }
+.cdot { width:5px; height:5px; border-radius:50%; background:var(--gr); flex-shrink:0; }
+
+/* ══════════════════════════════════════════
+   CONTACT
+══════════════════════════════════════════ */
+.contact-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+.clink {
+  display:flex; align-items:center; gap:13px;
+  padding:16px 18px; border:1px solid var(--bdr);
+  border-radius:12px; background:var(--bg2);
+  transition:all 0.15s; min-width:0;
+}
+.clink:hover { border-color:var(--ac); background:var(--bg3); transform:translateY(-1px); box-shadow:var(--sh2); }
+.clink-ico { font-size:22px; flex-shrink:0; }
+.cl-body { min-width:0; flex:1; overflow:hidden; }
+.cl-lbl { font-size:10px; color:var(--mu); text-transform:uppercase; letter-spacing:0.6px; font-weight:700; font-style:normal; }
+.cl-val { font-size:12px; font-weight:700; margin-top:2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; color:var(--tx2); }
+
+/* ══════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════ */
+footer {
+  padding:24px 36px;
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  border-top:1px solid var(--bdr);
+}
+.footer-copy { font-size:12px; color:var(--mu); font-style:italic; }
+.footer-tag  { font-size:12px; color:var(--mu); font-style:italic; }
+.footer-top  { font-size:12px; color:var(--mu); cursor:pointer; transition:color 0.15s; display:flex; align-items:center; gap:4px; }
+.footer-top:hover { color:var(--ac); }
+
+/* ══════════════════════════════════════════
+   FADE-IN
+══════════════════════════════════════════ */
+.fade-in { opacity:0; transform:translateY(18px); transition:opacity 0.5s ease, transform 0.5s ease; }
+.fade-in.visible { opacity:1; transform:translateY(0); }
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════ */
+@media(max-width:900px) {
+  .skills-wrap { grid-template-columns:1fr 1fr; }
+  .about-grid  { grid-template-columns:1fr; }
+}
+@media(max-width:768px) {
+  nav { padding:0 18px; }
+  .nav-links { display:none; }
+  .hero { padding:52px 18px 44px; }
+  .hero-inner { grid-template-columns:1fr; }
+  .photo-frame { display:none; }
+  .hero-name { font-size:38px; }
+  .stats-row { grid-template-columns:repeat(2,1fr); }
+  .stat:nth-child(2) { border-right:none; }
+  .stat:nth-child(4) { border-right:none; }
+  .section { padding:40px 18px; }
+  .contact-grid { grid-template-columns:1fr 1fr; }
+  footer { padding:18px; flex-direction:column; text-align:center; }
+}
+@media(max-width:480px) {
+  .skills-wrap { grid-template-columns:1fr; }
+  .contact-grid { grid-template-columns:1fr; }
+  .hero-name { font-size:32px; }
+  .sf-row { flex-wrap:wrap; }
+  .sf-lnk { margin-left:0; }
+}
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<!-- ═══ NAV ═══════════════════════════════════════ -->
+<nav>
+  <div class="nav-logo">Bhargav C</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-btn" onclick="toggleTheme()" title="Toggle dark / light theme" aria-label="Toggle theme">
+      <span class="theme-ico">🌙</span>
+    </button>
+    <div class="menu-wrap">
+      <button class="btn-profiles" id="menuBtn" onclick="toggleMenu()" aria-haspopup="true" aria-expanded="false">
+        ☰ &nbsp;Profiles ▾
+      </button>
+      <div class="dropdown" id="menuDrop" role="menu">
+        <a class="drop-item" href="https://github.com/BHARGAVC1" target="_blank" rel="noopener noreferrer">
+          <span class="drop-icon">🐙</span>
+          <div><div class="drop-name">GitHub</div><div class="drop-sub">BHARGAVC1 · 13 repositories</div></div>
+          <span class="drop-ext">↗</span>
+        </a>
+        <a class="drop-item" href="https://www.linkedin.com/in/bhargav-c-a2a46535a/" target="_blank" rel="noopener noreferrer">
+          <span class="drop-icon">💼</span>
+          <div><div class="drop-name">LinkedIn</div><div class="drop-sub">bhargav-c-a2a46535a</div></div>
+          <span class="drop-ext">↗</span>
+        </a>
+        <a class="drop-item" href="https://www.skills.google/public_profiles/c94444ca-d912-46e2-86da-cccc2e8cff9d" target="_blank" rel="noopener noreferrer">
+          <span class="drop-icon">🏆</span>
+          <div><div class="drop-name">Google Skills</div><div class="drop-sub">Gold League · 7,925 XP · 17 Badges</div></div>
+          <span class="drop-ext">↗</span>
+        </a>
+        <a class="drop-item" href="https://www.salesforce.com/trailblazer/uljp2gvi6u14agv2tj" target="_blank" rel="noopener noreferrer">
+          <span class="drop-icon">☁️</span>
+          <div><div class="drop-name">Salesforce Trailblazer</div><div class="drop-sub">Trailhead verified profile</div></div>
+          <span class="drop-ext">↗</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══ HERO ════════════════════════════════════════ -->
+<section class="hero" id="home">
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag">
+        <span class="pulse"></span> Open to opportunities · 2026
+      </div>
+      <div class="hero-role">✦ Aspiring Software Developer · AI Engineer ✦</div>
+      <div class="hero-name"><em>Bhargav C</em></div>
+
+      <div class="hero-seeking">
+        <strong>Actively seeking roles as:</strong>
+      </div>
+      <div class="role-tags">
+        <span class="rtag">🌐 Web Developer</span>
+        <span class="rtag">⚙️ Full Stack Developer (Java / Python)</span>
+        <span class="rtag">💻 Software Engineer</span>
+        <span class="rtag">🔧 Software Developer</span>
+        <span class="rtag">📊 Data Analyst</span>
+        <span class="rtag">🤖 AI Engineer</span>
+      </div>
+
+      <div class="hero-title">
+        <span class="htag">🛡️ GenAI Security</span>
+        <span class="htag">👁️ Computer Vision</span>
+        <span class="htag">💬 NLP</span>
+        <span class="htag">🏆 Google Gold League</span>
+        <span class="htag">☁️ Salesforce Trailblazer</span>
+      </div>
+
+      <p class="hero-desc">
+        Building secure, intelligent AI systems focused on generative AI security,
+        computer vision, and scalable full stack applications.
+        Production-oriented thinking with real, verified metrics to prove it.
+      </p>
+
+      <div class="hero-btns">
+        <a class="hbtn hbtn-primary" href="#projects">
+          📂 View Projects
+        </a>
+        <!-- Replace this href with your actual hosted resume PDF URL -->
+        <a class="hbtn hbtn-primary" href="https://github.com/BHARGAVC1" target="_blank" rel="noopener noreferrer">
+          📄 Download Resume
+        </a>
+        <a class="hbtn hbtn-outline" href="https://github.com/BHARGAVC1" target="_blank" rel="noopener noreferrer">
+          🐙 GitHub
+        </a>
+        <a class="hbtn hbtn-outline" href="mailto:bhargavc0406@gmail.com">
+          ✉️ Contact
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <div class="photo-frame" id="photoFrame" title="Click to upload your photo">
+        <input type="file" accept="image/*" class="photo-input" id="photoInput" onchange="loadPhoto(event)" aria-label="Upload profile photo">
+        <img id="photoImg" src="" alt="Bhargav C">
+        <div class="photo-placeholder" id="photoPlaceholder">
+          <span class="photo-ico">👤</span>
+          <span class="photo-hint">Click to upload<br>your photo</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STATS ════════════════════════════════════════ -->
+<div class="stats-row">
+  <div class="stat fade-in"><div class="stat-num">10<em>+</em></div><div class="stat-label">AI Projects</div></div>
+  <div class="stat fade-in"><div class="stat-num">94<em>%</em></div><div class="stat-label">Detection Accuracy</div></div>
+  <div class="stat fade-in"><div class="stat-num">95<em>%</em></div><div class="stat-label">CNN Accuracy</div></div>
+  <div class="stat fade-in"><div class="stat-num">17</div><div class="stat-label">Google Badges</div></div>
+  <div class="stat fade-in"><div class="stat-num">13</div><div class="stat-label">Certifications</div></div>
+</div>
+
+<!-- ═══ ABOUT ════════════════════════════════════════ -->
+<section class="section" id="about">
+  <div class="sec-hdr"><div class="sec-title">✦ About Me</div><div class="sec-idx">01</div></div>
+  <div class="about-grid">
+    <p class="about-text">
+      I am a <strong>Computer Science Engineering student</strong> at MVJ College of Engineering (VTU),
+      specialising in Artificial Intelligence, Generative AI Security, Computer Vision, and
+      NLP-driven applications. I build intelligent systems that solve real-world problems — from
+      AI-powered security monitoring platforms to real-time gesture recognition for accessibility.<br><br>
+      My work combines machine learning, backend engineering, and full stack development to deliver
+      <strong>production-ready solutions with measurable outcomes</strong>. 17 Google Cloud badges
+      and Gold League standing reflect my commitment to continuous, verified learning. I completed
+      a <strong>rated EXCELLENT</strong> internship at MindMatrix developing Android applications
+      with Generative AI capabilities, where I also served as a <strong>Capability Coach</strong>.<br><br>
+      I am actively seeking roles in web development, full stack engineering, software development,
+      data analytics, and AI engineering — where I can contribute meaningfully and grow from day one.
+    </p>
+    <div class="focus-list">
+      <div class="focus-item"><span class="focus-ico">🛡️</span> GenAI Security</div>
+      <div class="focus-item"><span class="focus-ico">👁️</span> Computer Vision</div>
+      <div class="focus-item"><span class="focus-ico">💬</span> NLP Systems</div>
+      <div class="focus-item"><span class="focus-ico">🖥️</span> AI Monitoring</div>
+      <div class="focus-item"><span class="focus-ico">⚙️</span> Full Stack AI</div>
+      <div class="focus-item"><span class="focus-ico">📱</span> Android Dev</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SKILLS ════════════════════════════════════════ -->
+<section class="section" id="skills">
+  <div class="sec-hdr"><div class="sec-title">✦ Technical Skills</div><div class="sec-idx">02</div></div>
+  <div class="skills-wrap">
+    <div class="sk-cat">
+      <div class="sk-name">🖊️ Languages</div>
+      <div class="sk-tags">
+        <span class="tag">Python</span><span class="tag">Java</span>
+        <span class="tag">JavaScript</span><span class="tag">Kotlin</span>
+      </div>
+    </div>
+    <div class="sk-cat">
+      <div class="sk-name">🤖 AI / ML</div>
+      <div class="sk-tags">
+        <span class="tag">NLP</span><span class="tag">Deep Learning</span>
+        <span class="tag">Computer Vision</span><span class="tag">YOLO</span>
+        <span class="tag">CNN</span><span class="tag">Hugging Face</span>
+        <span class="tag">GenAI</span><span class="tag">BERT</span>
+        <span class="tag">Transformers</span><span class="tag">TensorFlow</span>
+        <span class="tag">NumPy</span><span class="tag">Pandas</span>
+      </div>
+    </div>
+    <div class="sk-cat">
+      <div class="sk-name">⚙️ Frameworks</div>
+      <div class="sk-tags">
+        <span class="tag">FastAPI</span><span class="tag">React</span>
+        <span class="tag">Next.js</span><span class="tag">Spring Boot</span>
+        <span class="tag">Node.js</span><span class="tag">Jetpack Compose</span>
+        <span class="tag">OpenCV</span><span class="tag">Firebase</span>
+      </div>
+    </div>
+    <div class="sk-cat">
+      <div class="sk-name">☁️ Cloud & DevOps</div>
+      <div class="sk-tags">
+        <span class="tag">Google Cloud</span><span class="tag">Vertex AI</span>
+        <span class="tag">AWS S3</span><span class="tag">Docker</span>
+        <span class="tag">Kubernetes</span><span class="tag">Jenkins</span>
+        <span class="tag">MongoDB</span><span class="tag">MySQL</span>
+        <span class="tag">Git</span><span class="tag">Android Studio</span>
+        <span class="tag">Google AI Studio</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROJECTS ══════════════════════════════════════ -->
+<section class="section" id="projects">
+  <div class="sec-hdr"><div class="sec-title">✦ Featured Projects</div><div class="sec-idx">03</div></div>
+  <div class="proj-list">
+
+    <div class="proj fade-in">
+      <div class="proj-hdr">
+        <div class="proj-name">🛡️ GenAI Vulnerability Monitoring System</div>
+        <div class="proj-badge flagship">P-01 · Flagship</div>
+      </div>
+      <p class="proj-desc">A real-time AI security platform that detects prompt injection attacks, unsafe inputs, and misuse patterns across generative AI systems using NLP and rule-based security pipelines. Features a live threat dashboard, alert system, and prompt categorisation engine designed for production-scale monitoring.</p>
+      <div class="proj-metrics">
+        <span><span class="m-val">94%</span> <span class="m-lbl">detection accuracy</span></span>
+        <span><span class="m-val">10,000+</span> <span class="m-lbl">daily queries</span></span>
+        <span><span class="m-val">&lt;200ms</span> <span class="m-lbl">response time</span></span>
+        <span><span class="m-val">500+</span> <span class="m-lbl">prompt patterns</span></span>
+      </div>
+      <div class="stack">
+        <span class="chip">FastAPI</span><span class="chip">React</span><span class="chip">Next.js</span>
+        <span class="chip">MongoDB</span><span class="chip">NLP</span><span class="chip">Java</span>
+      </div>
+      <div class="proj-links">
+        <a class="plink" href="https://github.com/BHARGAVC1/GENAI-Vulnerability-Monitoring" target="_blank" rel="noopener noreferrer">🐙 GitHub</a>
+      </div>
+    </div>
+
+    <div class="proj fade-in">
+      <div class="proj-hdr">
+        <div class="proj-name">📱 Channapatna Namma Pride App</div>
+        <div class="proj-badge">P-02</div>
+      </div>
+      <p class="proj-desc">A civic and cultural Android application celebrating the heritage, tourism, and identity of Channapatna. Connects locals and visitors with information on traditional crafts, events, and local businesses through an intuitive mobile experience with Google Maps integration.</p>
+      <div class="proj-metrics">
+        <span><span class="m-val">Android</span> <span class="m-lbl">native application</span></span>
+        <span><span class="m-val">MVVM</span> <span class="m-lbl">architecture</span></span>
+        <span><span class="m-val">Maps</span> <span class="m-lbl">integration</span></span>
+      </div>
+      <div class="stack">
+        <span class="chip">Kotlin</span><span class="chip">Jetpack Compose</span>
+        <span class="chip">MVVM</span><span class="chip">Google Maps</span><span class="chip">Android</span>
+      </div>
+      <div class="proj-links">
+        <a class="plink" href="https://github.com/BHARGAVC1/channapatna-namma-pride" target="_blank" rel="noopener noreferrer">🐙 GitHub</a>
+      </div>
+    </div>
+
+    <div class="proj fade-in">
+      <div class="proj-hdr">
+        <div class="proj-name">📷 Violation Detection Camera</div>
+        <div class="proj-badge">P-03</div>
+      </div>
+      <p class="proj-desc">An AI-powered surveillance system that detects violent activities in real time using custom-trained YOLO models and OpenCV pipelines. Automatically stores detected event images on AWS S3 and sends SMS alerts. Trained on over 5,000 annotated frames for high-precision real-world deployment.</p>
+      <div class="proj-metrics">
+        <span><span class="m-val">80–85%</span> <span class="m-lbl">mAP@0.5</span></span>
+        <span><span class="m-val">90%</span> <span class="m-lbl">precision</span></span>
+        <span><span class="m-val">85%</span> <span class="m-lbl">recall</span></span>
+        <span><span class="m-val">5,000+</span> <span class="m-lbl">annotated frames</span></span>
+      </div>
+      <div class="stack">
+        <span class="chip">YOLO</span><span class="chip">OpenCV</span>
+        <span class="chip">Python</span><span class="chip">AWS S3</span><span class="chip">FastAPI</span>
+      </div>
+      <div class="proj-links">
+        <a class="plink" href="https://github.com/BHARGAVC1/Violation-Detection_Camera_ML" target="_blank" rel="noopener noreferrer">🐙 GitHub</a>
+      </div>
+    </div>
+
+    <div class="proj fade-in">
+      <div class="proj-hdr">
+        <div class="proj-name">🤟 Sign Language to Text Converter</div>
+        <div class="proj-badge">P-04</div>
+      </div>
+      <p class="proj-desc">A real-time gesture recognition system designed to improve accessibility for hearing-impaired users. A CNN-based computer vision model trained on over 25,000 images using OpenCV preprocessing achieves 95–97% validation accuracy with live detection output.</p>
+      <div class="proj-metrics">
+        <span><span class="m-val">95–97%</span> <span class="m-lbl">validation accuracy</span></span>
+        <span><span class="m-val">25,000+</span> <span class="m-lbl">training images</span></span>
+        <span><span class="m-val">Real-time</span> <span class="m-lbl">live detection</span></span>
+      </div>
+      <div class="stack">
+        <span class="chip">CNN</span><span class="chip">OpenCV</span>
+        <span class="chip">Python</span><span class="chip">TensorFlow</span>
+      </div>
+      <div class="proj-links">
+        <a class="plink" href="https://github.com/BHARGAVC1/Sign-Language-To-Text-Converter" target="_blank" rel="noopener noreferrer">🐙 GitHub</a>
+      </div>
+    </div>
+
+    <div class="proj fade-in">
+      <div class="proj-hdr">
+        <div class="proj-name">💬 NLP-Powered FAQ Chatbot</div>
+        <div class="proj-badge">P-05</div>
+      </div>
+      <p class="proj-desc">An intelligent FAQ chatbot using DistilBERT for accurate intent recognition across 50+ topics, served through Spring Boot REST APIs. Reduced manual query handling by 40–50% while maintaining 80–90% intent accuracy in production testing.</p>
+      <div class="proj-metrics">
+        <span><span class="m-val">80–90%</span> <span class="m-lbl">intent accuracy</span></span>
+        <span><span class="m-val">50+</span> <span class="m-lbl">topics covered</span></span>
+        <span><span class="m-val">40–50%</span> <span class="m-lbl">query reduction</span></span>
+      </div>
+      <div class="stack">
+        <span class="chip">DistilBERT</span><span class="chip">Spring Boot</span>
+        <span class="chip">Java</span><span class="chip">NLP</span><span class="chip">REST API</span>
+      </div>
+      <div class="proj-links">
+        <a class="plink" href="https://github.com/BHARGAVC1/Chatbot" target="_blank" rel="noopener noreferrer">🐙 GitHub</a>
+      </div>
+    </div>
+
+    <div class="proj fade-in">
+      <div class="proj-hdr">
+        <div class="proj-name">♻️ Integrated Waste Management System</div>
+        <div class="proj-badge">P-06</div>
+      </div>
+      <p class="proj-desc">A research-backed system for smart waste categorisation and sustainable management. The project contributed to an academic paper publication and received certification for applied environmental technology innovation — demonstrating AI's potential for real-world social impact.</p>
+      <div class="proj-metrics">
+        <span><span class="m-val">Published</span> <span class="m-lbl">research paper</span></span>
+        <span><span class="m-val">Certified</span> <span class="m-lbl">project completion</span></span>
+      </div>
+      <div class="stack">
+        <span class="chip">Python</span><span class="chip">IoT</span><span class="chip">Research</span>
+      </div>
+      <div class="proj-links">
+        <a class="plink" href="https://github.com/BHARGAVC1" target="_blank" rel="noopener noreferrer">🐙 GitHub</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ EXPERIENCE ════════════════════════════════════ -->
+<section class="section" id="experience">
+  <div class="sec-hdr"><div class="sec-title">✦ Experience</div><div class="sec-idx">04</div></div>
+  <div class="exp-card fade-in">
+    <div class="exp-hdr">
+      <div class="exp-role">📱 Android App Development using Generative AI — Intern</div>
+      <div class="exp-co">MindMatrix · CL Infotech Pvt. Ltd.</div>
+    </div>
+    <div class="exp-meta">
+      <span class="exp-pill ep-date">📅 2 Feb 2026 – 17 May 2026</span>
+      <span class="exp-pill ep-grade">⭐ Rated: EXCELLENT</span>
+      <span class="exp-pill ep-role">🎓 Capability Coach</span>
+      <span class="exp-pill ep-mode">🌐 Online · VTU Internship Portal</span>
+      <span class="exp-pill ep-uni">🏛️ MVJ College of Engineering</span>
+    </div>
+    <ul class="exp-list">
+      <li>Served as a <strong>Capability Coach</strong> during the internship — supporting peers in understanding concepts, debugging, and applying best practices in Android and GenAI development</li>
+      <li>Developed Android application features using <strong>Kotlin and Jetpack Compose</strong>, implementing MVVM architecture for production-quality, maintainable UI components</li>
+      <li>Gained hands-on experience with <strong>Android Studio, Google Cloud Labs, and Google AI Studio</strong> to explore and integrate GenAI capabilities into mobile workflows</li>
+      <li>Implemented <strong>UI/UX design principles</strong> — application prototyping, feature development, debugging, and iterative enhancements for a polished user experience</li>
+      <li>Applied <strong>Firebase integration</strong> and standard Android development workflows including testing and performance optimisation</li>
+      <li>Contributed to the <strong>Channapatna Namma Pride</strong> civic Android application — project-based learning with real-world deployment standards</li>
+      <li>Performance evaluated on <strong>continuous participation, task completion, and overall engagement</strong> — rated EXCELLENT by internship programme coordinators (Letter ID: Mx26INT00744)</li>
+    </ul>
+    <a class="exp-cert-link" href="https://github.com/BHARGAVC1/BHARGAV.C-Certifications/blob/main/Internship%20Certificate.jpeg" target="_blank" rel="noopener noreferrer">
+      📜 View Internship Completion Certificate ↗
+    </a>
+  </div>
+</section>
+
+<!-- ═══ CERTIFICATIONS ════════════════════════════════ -->
+<section class="section" id="certifications">
+  <div class="sec-hdr"><div class="sec-title">✦ Certifications & Badges</div><div class="sec-idx">05</div></div>
+
+  <!-- Google Skills Gold League -->
+  <div class="google-highlight fade-in">
+    <div class="gh-top">
+      <div class="gh-icon">🏆</div>
+      <div>
+        <div class="gh-name">Google Skills · Gold League</div>
+        <div class="gh-sub">17 verified badges · Google Cloud & AI Track · Member since 2025</div>
+        <div class="gh-pts">7,925 XP · <a href="https://www.skills.google/public_profiles/c94444ca-d912-46e2-86da-cccc2e8cff9d" target="_blank" rel="noopener noreferrer">View full profile →</a></div>
+      </div>
+    </div>
+    <div class="badge-pills">
+      <span class="bpill">MLOps for GenAI</span>
+      <span class="bpill">Gen AI Apps</span>
+      <span class="bpill">Gen AI Agents</span>
+      <span class="bpill">Transformer Models & BERT</span>
+      <span class="bpill">Encoder-Decoder Architecture</span>
+      <span class="bpill">Attention Mechanism</span>
+      <span class="bpill">Image Generation</span>
+      <span class="bpill">Image Captioning Models</span>
+      <span class="bpill">Prompt Design · Agent Platform</span>
+      <span class="bpill">Responsible AI (Applied)</span>
+      <span class="bpill">Intro to Responsible AI</span>
+      <span class="bpill">Intro to GenAI</span>
+      <span class="bpill">Intro to LLMs</span>
+      <span class="bpill">Gen AI: Beyond the Chatbot</span>
+      <span class="bpill">Gen AI: Navigate the Landscape</span>
+      <span class="bpill">Gen AI: Unlock Foundational Concepts</span>
+      <span class="bpill">Cloud Collaboration & Productivity</span>
+    </div>
+  </div>
+
+  <!-- Salesforce -->
+  <div class="sf-row fade-in">
+    <div class="sf-ico">☁️</div>
+    <div>
+      <div class="sf-n">Salesforce Trailblazer</div>
+      <div class="sf-s">Verified Trailhead profile · Salesforce platform & ecosystem learning</div>
+    </div>
+    <a class="sf-lnk" href="https://www.salesforce.com/trailblazer/uljp2gvi6u14agv2tj" target="_blank" rel="noopener noreferrer">View Profile ↗</a>
+  </div>
+
+  <!-- AI & GenAI -->
+  <div class="cert-cat-title">🤖 Artificial Intelligence & Generative AI</div>
+  <div class="cert-grid">
+    <div class="cert-card fade-in">
+      <a href="https://github.com/BHARGAVC1/BHARGAV.C-Certifications/blob/main/5%20Day%20AI%20Agents%20Intensive%20Course%20By%20Google%20and%20Kaggle.jpeg" target="_blank" rel="noopener noreferrer">
+        <span class="cert-icon-sm">🤖</span>
+        <div class="cert-iss">Google & Kaggle</div>
+        <div class="cert-nm">5-Day AI Agents Intensive Course</div>
+        <span class="cert-tag ct-ai">AI Agents</span>
+        <div class="cert-dot-row"><span class="cdot"></span> Verified · View certificate →</div>
+      </a>
+    </div>
+    <div class="cert-card fade-in">
+      <a href="https://github.com/BHARGAVC1/BHARGAV.C-Certifications/blob/main/Gen%20AI%20Mastermind%20By%20OUTSKILL.pdf" target="_blank" rel="noopener noreferrer">
+        <span class="cert-icon-sm">⚡</span>
+        <div class="cert-iss">OUTSKILL</div>
+        <div class="cert-nm">Gen AI Mastermind</div>
+        <span class="cert-tag ct-ai">GenAI</span>
+        <div class="cert-dot-row"><span class="cdot"></span> Verified · View certificate →</div>
+      </a>
+    </div>
+    <div class="cert-card fade-in">
+      <a href="https://github.com/BHARGAVC1/BHARGAV.C-Certifications/blob/main/Gen%20AI%20by%20OUTSKILL.jpeg" target="_blank" rel="noopener noreferrer">
+        <span class="cert-icon-sm">✨</span>
+        <div class="cert-iss">OUTSKILL</div>
+        <div class="cert-nm">Generative AI</div>
+        <span class="cert-tag ct-ai">GenAI</span>
+        <div class="cert-dot-row"><span class="cdot"></span> Verified · View certificate →</div>
+      </a>
+    </div>
+    <div class="cert-card fade-in">
+      <a href="https://github.com/BHARGAVC1/BHARGAV.C-Certifications/blob/main/Super%20charge%20AI%20Carrier%20Certificate.pdf" target="_blank" rel="noopener noreferrer">
+        <span class="cert-icon-sm">🚀</span>
+        <div class="cert-iss">Course Provider</div>
+        <div class="cert-nm">Supercharge AI Career</div>
+        <span class="cert-tag ct-ai">AI Career</span>
+        <div class="cert-dot-row"><span class="cdot"></span> Verified · View certificate →</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Cybersecurity -->
+  <div class="cert-cat-title">🔐 Cybersecurity</div>
+  <div class="cert-grid">
+    <div class="cert-card fade-in">
+      <a href="https://github.com/BHARGAVC1/BHARGAV.C-Certifications/blob/main/Cyber%20Job%20Simulation%20Certificate%20by%20Deloitte.pdf" target="_blank" rel="noopener noreferrer">
+        <span class="cert-icon-sm">🔐</span>
+        <div class="cert-iss">Deloitte</div>
+        <div class="cert-nm">Cyber Job Simulation</div>
+        <span class="cert-tag ct-cy">Cybersecurity</span>
+        <div class="cert-dot-row"><span class="cdot"></span> Verified · View certificate →</div>
+      </a>
+    </div>
+    <div class="cert-card fade-in">
+      <a href="https://github.com/BHARGAVC1/BHARGAV.C-Certifications/blob/main/Practical%20Cyber%20Security%20for%20Cyber%20Security%20Practitioners.pdf" target="_blank" rel="noopener noreferrer">
+        <span class="cert-icon-sm">🛡️</span>
+        <div class="cert-iss">Industry</div>
+        <div class="cert-nm">Practical Cyber Security for Practitioners</div>
+        <span class="cert-tag ct-cy">Cybersecurity</span>
+        <div class="cert-dot-row"><span class="cdot"></span> Verified · View certificate →</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Academic & Research -->
+  <div class="cert-cat-title">📄 Academic & Research</div>
+  <div class="cert-grid">
+    <div class="cert-card fade-in">
+      <a href="https://github.com/BHARGAVC1/BHARGAV.C-Certifications/blob/main/Certificate%20of%20Paper%20Publication.jpeg" target="_blank" rel="noopener noreferrer">
+        <span class="cert-icon-sm">📄</span>
+        <div class="cert-iss">Academic Journal</div>
+        <div class="cert-nm">Certificate of Paper Publication</div>
+        <span class="cert-tag ct-re">Research</span>
+        <div class="cert-dot-row"><span class="cdot"></span> Verified · View certificate →</div>
+      </a>
+    </div>
+    <div class="cert-card fade-in">
+      <a href="https://github.com/BHARGAVC1/BHARGAV.C-Certifications/blob/main/Integrated%20Waste%20Management%20System%20Certificate.pdf" target="_blank" rel="noopener noreferrer">
+        <span class="cert-icon-sm">♻️</span>
+        <div class="cert-iss">Academic</div>
+        <div class="cert-nm">Integrated Waste Management System</div>
+        <span class="cert-tag ct-re">Research</span>
+        <div class="cert-dot-row"><span class="cdot"></span> Verified · View certificate →</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Professional Development -->
+  <div class="cert-cat-title">💼 Professional Development</div>
+  <div class="cert-grid">
+    <div class="cert-card fade-in">
+      <a href="https://github.com/BHARGAVC1/BHARGAV.C-Certifications/blob/main/Internship%20Certificate.jpeg" target="_blank" rel="noopener noreferrer">
+        <span class="cert-icon-sm">💼</span>
+        <div class="cert-iss">MindMatrix · CL Infotech</div>
+        <div class="cert-nm">Internship Completion Certificate</div>
+        <span class="cert-tag ct-pr">Professional · EXCELLENT</span>
+        <div class="cert-dot-row"><span class="cdot"></span> Verified · View certificate →</div>
+      </a>
+    </div>
+    <div class="cert-card fade-in">
+      <a href="https://github.com/BHARGAVC1/BHARGAV.C-Certifications/blob/main/Coursera%20certificate.jpeg" target="_blank" rel="noopener noreferrer">
+        <span class="cert-icon-sm">🎓</span>
+        <div class="cert-iss">Coursera</div>
+        <div class="cert-nm">Coursera Certification</div>
+        <span class="cert-tag ct-pr">Professional Dev</span>
+        <div class="cert-dot-row"><span class="cdot"></span> Verified · View certificate →</div>
+      </a>
+    </div>
+    <div class="cert-card fade-in">
+      <a href="https://github.com/BHARGAVC1/BHARGAV.C-Certifications/blob/main/Communication%20certificate.png" target="_blank" rel="noopener noreferrer">
+        <span class="cert-icon-sm">🗣️</span>
+        <div class="cert-iss">Training Institute</div>
+        <div class="cert-nm">Communication Certificate</div>
+        <span class="cert-tag ct-pr">Soft Skills</span>
+        <div class="cert-dot-row"><span class="cdot"></span> Verified · View certificate →</div>
+      </a>
+    </div>
+    <div class="cert-card fade-in">
+      <a href="https://github.com/BHARGAVC1/BHARGAV.C-Certifications/blob/main/Bhargav%20C%20-%20Aptitude%20Participation%20Certificate.pdf" target="_blank" rel="noopener noreferrer">
+        <span class="cert-icon-sm">🧠</span>
+        <div class="cert-iss">Assessment Body</div>
+        <div class="cert-nm">Aptitude Participation Certificate</div>
+        <span class="cert-tag ct-pr">Assessment</span>
+        <div class="cert-dot-row"><span class="cdot"></span> Verified · View certificate →</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Extracurricular -->
+  <div class="cert-cat-title">🏃 Extracurricular</div>
+  <div class="cert-grid">
+    <div class="cert-card fade-in">
+      <a href="https://github.com/BHARGAVC1/BHARGAV.C-Certifications/blob/main/Marathon%20Certificate.pdf" target="_blank" rel="noopener noreferrer">
+        <span class="cert-icon-sm">🏃</span>
+        <div class="cert-iss">Marathon Event</div>
+        <div class="cert-nm">Marathon Participation Certificate</div>
+        <span class="cert-tag ct-ex">Extracurricular</span>
+        <div class="cert-dot-row"><span class="cdot"></span> Verified · View certificate →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══════════════════════════════════════ -->
+<section class="section" id="contact">
+  <div class="sec-hdr"><div class="sec-title">✦ Get in Touch</div><div class="sec-idx">06</div></div>
+  <div class="contact-grid">
+    <a class="clink fade-in" href="mailto:bhargavc0406@gmail.com">
+      <span class="clink-ico">✉️</span>
+      <div class="cl-body">
+        <div class="cl-lbl">Email</div>
+        <div class="cl-val">bhargavc0406@gmail.com</div>
+      </div>
+    </a>
+    <a class="clink fade-in" href="https://github.com/BHARGAVC1" target="_blank" rel="noopener noreferrer">
+      <span class="clink-ico">🐙</span>
+      <div class="cl-body">
+        <div class="cl-lbl">GitHub</div>
+        <div class="cl-val">BHARGAVC1</div>
+      </div>
+    </a>
+    <a class="clink fade-in" href="https://www.linkedin.com/in/bhargav-c-a2a46535a/" target="_blank" rel="noopener noreferrer">
+      <span class="clink-ico">💼</span>
+      <div class="cl-body">
+        <div class="cl-lbl">LinkedIn</div>
+        <div class="cl-val">bhargav-c-a2a46535a</div>
+      </div>
+    </a>
+    <a class="clink fade-in" href="https://www.skills.google/public_profiles/c94444ca-d912-46e2-86da-cccc2e8cff9d" target="_blank" rel="noopener noreferrer">
+      <span class="clink-ico">🏆</span>
+      <div class="cl-body">
+        <div class="cl-lbl">Google Skills</div>
+        <div class="cl-val">Gold League · 7,925 XP</div>
+      </div>
+    </a>
+    <a class="clink fade-in" href="https://www.salesforce.com/trailblazer/uljp2gvi6u14agv2tj" target="_blank" rel="noopener noreferrer">
+      <span class="clink-ico">☁️</span>
+      <div class="cl-body">
+        <div class="cl-lbl">Salesforce</div>
+        <div class="cl-val">Trailblazer Profile</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ════════════════════════════════════════ -->
+<footer>
+  <div class="footer-copy">© 2026 Bhargav C</div>
+  <div class="footer-tag"><em>Building secure, intelligent AI systems</em></div>
+  <div class="footer-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑ Back to top</div>
+</footer>
+
+<!-- ═══ SCRIPTS ══════════════════════════════════════ -->
+<script>
+/* Scroll progress */
+window.addEventListener('scroll', () => {
+  const el = document.getElementById('progress');
+  const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+  el.style.width = pct + '%';
+});
+
+/* Theme toggle */
+function toggleTheme() {
+  const html = document.documentElement;
+  const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  html.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+  document.querySelector('.theme-ico').textContent = next === 'dark' ? '🌙' : '☀️';
+}
+(function () {
+  const saved = localStorage.getItem('theme');
+  if (saved) {
+    document.documentElement.setAttribute('data-theme', saved);
+    document.querySelector('.theme-ico').textContent = saved === 'dark' ? '🌙' : '☀️';
+  }
+})();
+
+/* Profiles dropdown */
+function toggleMenu() {
+  const dd  = document.getElementById('menuDrop');
+  const btn = document.getElementById('menuBtn');
+  const open = dd.classList.toggle('open');
+  btn.setAttribute('aria-expanded', open);
+}
+document.addEventListener('click', (e) => {
+  const btn = document.getElementById('menuBtn');
+  const dd  = document.getElementById('menuDrop');
+  if (btn && dd && !btn.contains(e.target) && !dd.contains(e.target)) {
+    dd.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+  }
+});
+
+/* Photo upload */
+function loadPhoto(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = (ev) => {
+    const img = document.getElementById('photoImg');
+    const ph  = document.getElementById('photoPlaceholder');
+    img.src = ev.target.result;
+    img.classList.add('loaded');
+    ph.style.display = 'none';
+  };
+  reader.readAsDataURL(file);
+}
+
+/* Fade-in on scroll */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((e) => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.07, rootMargin: '0px 0px -30px 0px' });
+
+document.querySelectorAll('.fade-in').forEach((el, i) => {
+  el.style.transitionDelay = (i % 6) * 0.07 + 's';
+  observer.observe(el);
+});
+</script>
+</body>
+</html>
